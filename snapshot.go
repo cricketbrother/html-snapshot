@@ -13,7 +13,7 @@ import (
 //
 // - Element is the CSS selector of the element to be converted to a PNG file. It is used in the MakeScreenshotElement function.
 //
-// - Dst is the path to the PNG file.
+// - Dst is the path to the image file or the PDF file.
 //
 // - Width is the width of the PNG file. It is used in the MakeScreenshotPage and MakeScreenshotElement functions.
 //
