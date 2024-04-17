@@ -6,9 +6,9 @@ A Go module that can snapshot web pages and convert HTML to images or PDFs
 
 ## 前提条件 Prerequisite
 
-安装好NodeJS和NPM并配置好环境变量。必要时，可能需要可用的上网工具
+安装好NodeJS和NPM并配置好环境变量。必要时可能需要可用的上网工具
 
-Install NodeJS and NPM, and configure environment variables. When necessary, available Internet tools may be required
+Install NodeJS and NPM and configure environment variables. Available Internet tools may be required when necessary
 
 ## 用法 Usage
 
@@ -39,6 +39,7 @@ func main() {
 		println(err.Error())
 	}
 
+	c.Src = "https://www.sina.com.cn"
 	c.Dst = "sample3.pdf"
 
 	err = c.MakePdfPage()
