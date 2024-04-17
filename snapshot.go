@@ -19,6 +19,7 @@ import (
 type Converter struct {
 	NodePath string
 	Src      string
+	Element  string
 	Dst      string
 	Width    int
 	Height   int
@@ -56,7 +57,7 @@ func (c *Converter) MakeScreenshotElement() error {
 		c.NodePath = "node"
 	}
 
-	cmd := exec.Command(c.NodePath, "pptr/screenshotElement.mjs", c.Src, c.Dst, strconv.Itoa(c.Width), strconv.Itoa(c.Height))
+	cmd := exec.Command(c.NodePath, "pptr/screenshotElement.mjs", c.Src, c.Element, c.Dst, strconv.Itoa(c.Width), strconv.Itoa(c.Height))
 	if err := cmd.Run(); err != nil {
 		return err
 	}
