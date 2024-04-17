@@ -160,7 +160,7 @@ const browser = await puppeteer.launch();
 const page = await browser.newPage();
 await page.setViewport({ width: parseInt(width), height: parseInt(height) });
 await page.goto(src);
-await page.pdf({ path: dst });
+await page.pdf({ path: dst, width: parseInt(width), height: parseInt(height) });
 await browser.close();`)
 		if err != nil {
 			fmt.Println("Failed to write pdfPage.mjs.")

@@ -67,6 +67,8 @@ func (c *Converter) MakeScreenshotElement() error {
 
 // MakePdfPage is a function that converts an HTML file to a PDF file.
 //
+// - If the c.Width or c.Height is not specified, the function will return an error.
+//
 // - If the c.NodePath is not specified, the default path is "node".
 //
 // - If the c.Src or c.Dst is not specified, the function will return an error.
@@ -75,7 +77,7 @@ func (c *Converter) MakePdfPage() error {
 		c.NodePath = "node"
 	}
 
-	cmd := exec.Command(c.NodePath, "pptr/pdfPage.mjs", c.Src, c.Dst)
+	cmd := exec.Command(c.NodePath, "pptr/pdfPage.mjs", c.Src, c.Dst, strconv.Itoa(c.Width), strconv.Itoa(c.Height))
 	if err := cmd.Run(); err != nil {
 		return err
 	}
