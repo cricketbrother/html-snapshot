@@ -145,22 +145,19 @@ func checkPdfPage() {
 
 		_, err = f.WriteString(`const argv = process.argv;
 let src, dst, width, height;
-if (argv.length === 6) {
+if (argv.length === 4) {
 	src = argv[2];
 	dst = argv[3];
-	width = argv[4];
-	height = argv[5];
 } else {
-	console.log('Usage: \n> node pdfPage.mjs src dst width height\n');
+	console.log('Usage: \n> node pdfPage.mjs src dst\n');
 	process.exit(1);
 }
 
 import puppeteer from './node_modules/puppeteer/lib/esm/puppeteer/puppeteer.js';
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
-await page.setViewport({ width: parseInt(width), height: parseInt(height) });
 await page.goto(src);
-await page.pdf({ path: dst, width: parseInt(width), height: parseInt(height) });
+await page.pdf({ path: dst });
 await browser.close();`)
 		if err != nil {
 			fmt.Println("Failed to write pdfPage.mjs.")

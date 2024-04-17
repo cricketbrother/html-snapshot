@@ -9,13 +9,15 @@ import (
 //
 // - NodePath is the path to the Node.js executable.
 //
-// - HTMLPath is the path to the HTML file.
+// - Src is the path to the HTML file.
 //
-// - PNGPath is the path to the PNG file.
+// - Element is the CSS selector of the element to be converted to a PNG file. It is used in the MakeScreenshotElement function.
 //
-// - Width is the width of the PNG file.
+// - Dst is the path to the PNG file.
 //
-// - Height is the height of the PNG file.
+// - Width is the width of the PNG file. It is used in the MakeScreenshotPage and MakeScreenshotElement functions.
+//
+// - Height is the height of the PNG file. It is used in the MakeScreenshotPage and MakeScreenshotElement functions.
 type Converter struct {
 	NodePath string
 	Src      string
@@ -67,8 +69,6 @@ func (c *Converter) MakeScreenshotElement() error {
 
 // MakePdfPage is a function that converts an HTML file to a PDF file.
 //
-// - If the c.Width or c.Height is not specified, the function will return an error.
-//
 // - If the c.NodePath is not specified, the default path is "node".
 //
 // - If the c.Src or c.Dst is not specified, the function will return an error.
@@ -77,7 +77,7 @@ func (c *Converter) MakePdfPage() error {
 		c.NodePath = "node"
 	}
 
-	cmd := exec.Command(c.NodePath, "pptr/pdfPage.mjs", c.Src, c.Dst, strconv.Itoa(c.Width), strconv.Itoa(c.Height))
+	cmd := exec.Command(c.NodePath, "pptr/pdfPage.mjs", c.Src, c.Dst)
 	if err := cmd.Run(); err != nil {
 		return err
 	}
