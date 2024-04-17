@@ -81,7 +81,7 @@ if (argv.length === 6) {
 	process.exit(1);
 }
 
-import puppeteer from './pptr/node_modules/puppeteer/lib/esm/puppeteer/puppeteer.js';
+import puppeteer from './node_modules/puppeteer/lib/esm/puppeteer/puppeteer.js';
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
 await page.setViewport({ width: parseInt(width), height: parseInt(height) });
@@ -118,7 +118,7 @@ if (argv.length === 7) {
 	process.exit(1);
 }
 
-import puppeteer from './pptr/node_modules/puppeteer/lib/esm/puppeteer/puppeteer.js';
+import puppeteer from './node_modules/puppeteer/lib/esm/puppeteer/puppeteer.js';
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
 await page.setViewport({ width: parseInt(width), height: parseInt(height) });
@@ -155,7 +155,7 @@ if (argv.length === 6) {
 	process.exit(1);
 }
 
-import puppeteer from './pptr/node_modules/puppeteer/lib/esm/puppeteer/puppeteer.js';
+import puppeteer from './node_modules/puppeteer/lib/esm/puppeteer/puppeteer.js';
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
 await page.setViewport({ width: parseInt(width), height: parseInt(height) });
