@@ -2,11 +2,15 @@
 
 一个可以快照网页的Go模块，将HTML转换成图片或PDF
 
-## 前提条件
+A Go module that can snapshot web pages and convert HTML to images or PDFs
 
-安装好NodeJS和NPM，并配置好环境变量。必要时，可能需要可用的上网工具
+## 前提条件 Prerequisite
 
-## 用法
+安装好NodeJS和NPM并配置好环境变量。必要时，可能需要可用的上网工具
+
+Install NodeJS and NPM, and configure environment variables. When necessary, available Internet tools may be required
+
+## 用法 Usage
 
 ```go
 package main
