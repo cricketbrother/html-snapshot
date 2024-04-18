@@ -1,4 +1,4 @@
-package html2png
+package htmlsnapshot
 
 import (
 	"fmt"
